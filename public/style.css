@@ -1,0 +1,55 @@
+:root{
+  --bg:#0b1020;
+  --panel:#0f1724;
+  --accent:#7c3aed;
+  --accent-2:#06b6d4;
+  --user:#1f2937;
+  --bot:#0f1724;
+  --glass: rgba(255,255,255,0.04);
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1000px 400px at 10% 10%, rgba(124,58,237,0.08), transparent), var(--bg);
+  color: #e6eef8;
+  margin:0; padding:20px; min-height:100vh;
+}
+.container{
+  max-width:900px; margin:28px auto; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.04);
+}
+.header{display:flex;align-items:center;gap:12px}
+.logo{font-size:34px}
+h1{font-size:20px;margin:0}
+.subtitle{margin:0;color:rgba(230,238,248,0.7);font-size:13px}
+
+.chat-box{height:520px; overflow:auto; padding:18px; margin:18px 0; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.02)}
+
+.message-row{display:flex; gap:12px; margin:12px 0; align-items:flex-start}
+.message-row.user{justify-content:flex-end}
+.avatar{width:40px;height:40px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:18px}
+.avatar.user{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#04121f}
+.avatar.bot{background:rgba(255,255,255,0.03); color:var(--accent-2)}
+
+.bubble{max-width:70%; padding:12px 14px; border-radius:12px; background:var(--glass); color:inherit; box-shadow: 0 6px 18px rgba(2,6,23,0.6)}
+.message-row.user .bubble{background:linear-gradient(90deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06)); color:#fff}
+.message-row.bot .bubble{background:rgba(255,255,255,0.02)}
+
+.game-card{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02)}
+.game-thumb{width:72px;height:72px;border-radius:6px;background:#0b1220;display:flex;align-items:center;justify-content:center;color:#9fb8ff;font-weight:600}
+.game-meta{flex:1}
+.game-title{font-weight:700;margin:0 0 6px 0}
+.game-desc{margin:0;font-size:13px;color:rgba(230,238,248,0.8)}
+.game-tags{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:rgba(230,238,248,0.9)}
+
+.composer{display:flex;gap:12px}
+input[type="text"]{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px}
+button{padding:10px 16px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021024;cursor:pointer}
+button:active{transform:translateY(1px)}
+
+.muted{color:rgba(230,238,248,0.6);font-size:13px}
+.typing{font-style:italic;color:rgba(230,238,248,0.75)}
+
+/* responsive */
+@media(max-width:640px){.container{padding:12px}.chat-box{height:68vh}}
